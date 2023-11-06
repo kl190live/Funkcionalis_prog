@@ -31,20 +31,30 @@ document.addEventListener('DOMContentLoaded',()=>{
   Feladat_2.textContent="The"
   document.getElementById('app')!.appendChild(Feladat_2)
     Feladat_2.addEventListener('click',()=>{
-      
-      const The=Array.from(quotes.map((quotes)=>"„"+quotes.quote+"”"))
-      const the=The.find((the)=>the==="The","the")
-      
-      console.log(The)
+      const lista_2=document.getElementById('lista_2')
+      const The=Array.from(quotes.map((quotes)=>quotes.quote))
+      The.forEach((item)=>{
+        const the=item.replace("the"," <b>the</b>")
+        const the2=the.replace("The"," <b>The</b>")
+        let ol=document.createElement('ol')
+        ol.textContent=the;
+        ol.innerHTML=the2;
+        lista_2!.appendChild(ol)
+      })
     })
   const Feladat_3=document.createElement('button')
   Feladat_3.textContent="Hossz"
   document.getElementById('app')!.appendChild(Feladat_3)
   document.getElementById('app')!.appendChild(Feladat_3)
     Feladat_3.addEventListener('click',()=>{
-      
+      const lista_3=document.getElementById('lista_3')
+      const Hossz=Array.from(quotes.map((quotes)=>quotes.quote.length))
+      Hossz.forEach((item)=>{
 
+        let ul=document.createElement('ul')
+        lista_3!.appendChild(ul)
     })
+  })
   const Feladat_4=document.createElement('button')
   Feladat_4.textContent="Darabszám"
   document.getElementById('app')!.appendChild(Feladat_4)
