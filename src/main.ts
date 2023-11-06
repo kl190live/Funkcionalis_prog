@@ -49,12 +49,9 @@ document.addEventListener('DOMContentLoaded',()=>{
     Feladat_3.addEventListener('click',()=>{
       const lista_3=document.getElementById('lista_3')
       const Hossz=Array.from(quotes.map((quotes)=>quotes.quote.length))
-      Hossz.forEach((item)=>{
-
-        let ul=document.createElement('ul')
-        lista_3!.appendChild(ul)
+      lista_3!.textContent=Hossz.join(' , ')
     })
-  })
+  
   const Feladat_4=document.createElement('button')
   Feladat_4.textContent="Darabszám"
   document.getElementById('app')!.appendChild(Feladat_4)
